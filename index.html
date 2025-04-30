@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aziza x</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #232222;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif; /* Modernere, fortschrittliche Schrift */
+      font-size: 4rem;
+      line-height: 1.2;
+      color: #D1D5DB; /* Soft gray for header text */
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .button {
+      padding: 0.75rem 1.5rem; /* Etwas kleinere Buttons */
+      font-size: 1rem;
+      border-radius: 9999px; /* Abgerundete Ecken für einen eleganteren Look */
+      text-align: center;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      border: none;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    .button:active {
+      transform: scale(1);
+    }
+
+    .button-purple {
+      background-color: #9b4de2;
+      color: #fff;
+    }
+
+    .button-purple:hover {
+      background-color: #7a3ec6;
+    }
+
+    .button-gray {
+      background-color: #2d3748;
+      color: #fff;
+    }
+
+    .button-gray:hover {
+      background-color: #1a202c;
+    }
+
+    .button-indigo {
+      background-color: #4c51bf;
+      color: #fff;
+    }
+
+    .button-indigo:hover {
+      background-color: #434190;
+    }
+
+    .button-blue {
+      background-color: #3182ce;
+      color: #fff;
+    }
+
+    .button-blue:hover {
+      background-color: #2b6cb0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem; /* Mehr Abstand und eleganterer Look */
+      background-color: #1f1f1f; /* Etwas dunklerer Footer */
+      color: #A0AEC0;
+      font-size: 0.875rem;
+      border-top: 2px solid #444;
+    }
+
+    footer a {
+      color: #A0AEC0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+
+
+
+
+
+
+    
+    /* Benutzerdefinierte Animation: Schnelles Hochspringen */
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    .bounce-animation {
+      animation: none;
+    }
+
+    
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body    class="flex flex-col min-h-screen"> <div style="background: radial-gradient(circle at center, #211320, #0b0f14, #100a0e);">
+
+  <header class="flex flex-col items-center py-20 space-y-4">
+    <h1 class="text-4xl md:text-5xl lg:text-5xl font-semibold">
+      AZISA X
+    </h1>
+    
+    <h2 class="text-4xl text-center md:text-5xl lg:text-3xl font-semibold">
+      Online-Wirkung mit Design & Strategie
+    </h2>
+
+  </header>
+
+  <main class="flex-grow flex flex-col items-center justify-center space-y-6 px-4">
+    <div class="w-full max-w-md space-y-4">
+      <button class="button button-gray">Online Präsenz</button>
+      <button class="button button-gray">Konsistente Markenkommunikation</button>
+      <button class="button button-indigo">Sicherheit & Datenschutz</button>
+      <button class="button button-blue">Kundenorientierter Support</button>
+    </div>
+  </main>
+
+
+  <section class="container mx-auto px-4 py-12 md:py-24"> 
+    <div class="max-w-3xl mx-auto text-center">
+        <h3 class="text-2xl font-semibold text-gray-800">Verwandeln Sie online Besucher in Kunden - mit digitaler Präsenz die wirkt.</h3>
+        <p class="mt-4 text-lg text-purple-300"></p>
+
+    </div>
+
+    <div class="flex justify-center py-8">
+      <a href="Kontakt.html" class="bg-[#0e0e0e] text-white border border-white/25 px-8 py-6 sm:px-12 sm:py-7 text-base sm:text-lg rounded-xl cursor-pointer text-center leading-relaxed sm:leading-7 max-w-xs flex flex-col gap-4 hover:border-white/50">
+          
+          <div id="bounceText" class="text-[#5ac8fa] bounce-animation text-base sm:text-lg">connect with aziza x</div>
+      </a>
+    </div>
+
+  </section>
+
+
+
+
+
+
+  <footer class="bg-transparent text-white text-center py-8" style="border-top: none;">
+    <p class="mb-2 text-sm opacity-80">© 2025 Aziza</p>
+    <div class="space-x-6 text-sm opacity-80">
+      <a href="Impressum.html" class="hover:underline">Impressum</a>
+      <a href="Kontakt.html" class="hover:underline">Kontakt</a>
+      <a href="Datenschutz.html" class="hover:underline">Datenschutz</a>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+  <script>
+    function startBounceAnimation() {
+    const text = document.getElementById('bounceText');
+    text.style.animation = 'bounce 0.35s ease-in-out';
+    setTimeout(() => {
+      text.style.animation = 'none';
+    }, 350);
+  }
+  setInterval(startBounceAnimation, 8000);
+
+
+  </script>
+
+</body>
+</html>
