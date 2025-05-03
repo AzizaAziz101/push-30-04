@@ -123,7 +123,87 @@
       animation: none;
     }
 
-    
+
+
+
+        /* Stil für den Spezialknopf */
+        .knopf-fusion {
+      position: relative;
+      width: 365px;
+      height: 230px;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      background: none;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    /* Bild im Spezialknopf */
+    .knopf-fusion .bild-innerhalb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Container für überlagerte Streifen */
+    .streifen-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Einzelne horizontale Streifen */
+    .streifen-linie {
+      position: absolute;
+      width: 100%;
+      height: 20%;
+      background-color: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: opacity 0.3s ease, transform 0.2s ease;
+    }
+
+    .streifen-linie:nth-child(1) { top: 0; }
+    .streifen-linie:nth-child(2) { top: 20%; }
+    .streifen-linie:nth-child(3) { top: 40%; }
+    .streifen-linie:nth-child(4) { top: 60%; }
+    .streifen-linie:nth-child(5) { top: 80%; }
+
+    /* Hover-Effekt: Linien erscheinen */
+    .knopf-fusion:hover .streifen-linie {
+      opacity: 1;
+    }
+
+    /* Staffelung der Animationen */
+    .knopf-fusion:hover .streifen-linie:nth-child(1) {
+      animation: streifenFuellung 0.2s 0s forwards;
+    }
+
+    .knopf-fusion:hover .streifen-linie:nth-child(2) {
+      animation: streifenFuellung 0.2s 0.2s forwards;
+    }
+
+    .knopf-fusion:hover .streifen-linie:nth-child(3) {
+      animation: streifenFuellung 0.2s 0.4s forwards;
+    }
+
+    .knopf-fusion:hover .streifen-linie:nth-child(4) {
+      animation: streifenFuellung 0.2s 0.6s forwards;
+    }
+
+    .knopf-fusion:hover .streifen-linie:nth-child(5) {
+      animation: streifenFuellung 0.2s 0.8s forwards;
+    }
+
+    /* Keyframe für Streifenfüllung */
+    @keyframes streifenFuellung {
+      0% { transform: scaleX(0); }
+      100% { transform: scaleX(1); }
+    }
   </style>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -144,21 +224,51 @@
 
   </header>
 
+
   <main class="flex-grow flex flex-col items-center justify-center space-y-6 px-4">
     <div class="w-full max-w-md space-y-4">
-      <button class="button button-gray">Online Präsenz</button>
-      <button class="button button-gray">Konsistente Markenkommunikation</button>
-      <button class="button button-indigo">Sicherheit & Datenschutz</button>
-      <button class="button button-blue">Kundenorientierter Support</button>
+      <button class="button button-gray" data-modal="online-presence">Online Präsenz</button>
+      <button class="button button-gray" data-modal="brand-communication">Konsistente Markenkommunikation</button>
+      <button class="button button-indigo" data-modal="security-privacy">Sicherheit & Datenschutz</button>
+      <button class="button button-blue" data-modal="customer-support">Kundenorientierter Support</button>
     </div>
   </main>
 
+
+
+<!-- Modal Structure -->
+<div id="modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center px-4 sm:px-8 md:px-12" onclick="handleOverlayClick(event)">
+    <div class="bg-gray-800 rounded-2xl max-w-md sm:max-w-lg md:max-w-xl w-full p-6 shadow-lg relative">
+      <h2 id="modal-title" class="text-2xl font-semibold text-white text-center mb-6"></h2>
+      <div id="modal-content" class="space-y-5 text-gray-300"></div>
+      <div class="mt-8 flex justify-center">
+        <button onclick="closeModal()" class="text-gray-200 border border-gray-600 px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300 ease-in-out">✖ Schließen</button>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  
 
   <section class="container mx-auto px-4 py-12 md:py-24"> 
     <div class="max-w-3xl mx-auto text-center">
         <h3 class="text-2xl font-semibold text-gray-800">Verwandeln Sie online Besucher in Kunden - mit digitaler Präsenz die wirkt.</h3>
         <p class="mt-4 text-lg text-purple-300"></p>
 
+    </div>
+
+
+
+
+
+
+
+    <div class="flex justify-center py-8">
+      <a href="Caces.html" class="bg-[#0e0e0e] text-white border border-white/25 px-8 py-6 sm:px-12 sm:py-7 text-base sm:text-lg rounded-xl cursor-pointer text-center leading-relaxed sm:leading-7 max-w-xs flex flex-col gap-4 hover:border-white/50">
+          
+          <div id="bounceText" class="text-[#5ac8fa] bounce-animation text-base sm:text-lg">cases</div>
+      </a>
     </div>
 
     <div class="flex justify-center py-8">
@@ -203,5 +313,86 @@
 
   </script>
 
+
+
+
+<script>
+  // Modal content data
+  const modalData = {
+"online-presence": {
+  title: "Deine Online-Präsenz, die verkauft.",
+  content: `
+    <p class="font-semibold text-lg">1. Dein digitaler erster Eindruck</p>
+    <p class="text-sm mb-4">In Sekunden entscheiden Menschen, ob sie dir vertrauen. Eine moderne, mobile Website wirkt wie ein maßgeschneiderter Anzug – sie zeigt Qualität, Sicherheit und Professionalität.</p>
+
+    <p class="font-semibold text-lg">2. Nähe schafft Vertrauen</p>
+    <p class="text-sm mb-4">Präsenz auf Plattformen wie Instagram, LinkedIn oder TikTok macht dich menschlich. Du wirst greifbar, sympathisch – und relevant.</p>
+
+    <p class="font-semibold text-lg">3. Sichtbar bei Google</p>
+    <p class="text-sm mb-4">Die besten Inhalte bringen nichts, wenn man dich nicht findet. Mit klugen Texten, Struktur und Technik wirst du dort sichtbar, wo deine Kunden nach dir suchen: auf Google.</p>
+
+    <p class="font-semibold text-lg">4. Ein Branding, das bleibt</p>
+    <p class="text-sm">Wiedererkennbarkeit ist kein Zufall. Mit konsistentem Design, klarer Sprache und einem starken Logo wirst du zur Marke, die man nicht vergisst.</p>
+  `
+},
+    "brand-communication": {
+      title: "Konsistente Markenkommunikation",
+      content: `
+        <p class="text-sm">Die Art und Weise, wie du deine Marke kommunizierst, ist entscheidend. Konsistenz in der Sprache, dem Design und den Botschaften macht dich wiedererkennbar und stärkt das Vertrauen deiner Kunden.</p>
+      `
+    },
+    "security-privacy": {
+      title: "Sicherheit & Datenschutz",
+      content: `
+        <p class="text-sm">Schütze deine Kunden und ihr Vertrauen. Durch transparente Datenschutzpraktiken und eine sichere Webumgebung gewährleistest du das Vertrauen in deine Marke.</p>
+      `
+    },
+    "customer-support": {
+      title: "Kundenorientierter Support",
+      content: `
+        <p class="text-sm">Ein exzellenter Support ist der Schlüssel, um deine Kunden langfristig zu binden. Deine Kunden sollen sich jederzeit gut betreut und verstanden fühlen.</p>
+      `
+    }
+  };
+
+  // Open modal and display the appropriate content
+  document.querySelectorAll('button[data-modal]').forEach(button => {
+    button.addEventListener('click', function() {
+      const modalId = this.getAttribute('data-modal');
+      openModal(modalId);
+    });
+  });
+
+  function openModal(modalId) {
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalContent = document.getElementById('modal-content');
+
+    const data = modalData[modalId];
+    if (data) {
+      modalTitle.textContent = data.title;
+      modalContent.innerHTML = data.content;
+      modal.classList.remove('hidden');
+      document.addEventListener('keydown', handleEscape);
+    }
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.add('hidden');
+    document.removeEventListener('keydown', handleEscape);
+  }
+
+  function handleEscape(e) {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  }
+
+  function handleOverlayClick(e) {
+    if (e.target.id === 'modal') {
+      closeModal();
+    }
+  }
+</script>
 </body>
 </html>

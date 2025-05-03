@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button mit animiertem Overlay</title>
+  <style>
+    /* Stil für den Spezialknopf */
+    .knopf-fusion {
+      position: relative;
+      width: 365px;
+      height: 230px;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      background: none;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    /* Bild im Spezialknopf */
+    .knopf-fusion .bild-innerhalb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Container für überlagerte Streifen */
+    .streifen-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Einzelne horizontale Streifen */
+    .streifen-linie {
+      position: absolute;
+      width: 100%;
+      height: 20%;
+      background-color: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: opacity 0.3s ease, transform 0.2s ease;
+    }
+
+    .streifen-linie:nth-child(1) { top: 0; }
+    .streifen-linie:nth-child(2) { top: 20%; }
+    .streifen-linie:nth-child(3) { top: 40%; }
+    .streifen-linie:nth-child(4) { top: 60%; }
+    .streifen-linie:nth-child(5) { top: 80%; }
+
+    /* Hover-Effekt: Linien erscheinen */
+    .knopf-fusion:hover .streifen-linie {
+      opacity: 1;
+    }
+
+    /* Staffelung der Animationen */
+    .knopf-fusion:hover .streifen-linie:nth-child(1) {
+      animation: streifenFuellung 0.2s 0s forwards;
+    }
+
+    .knopf-fusion:hover .streifen-linie:nth-child(2) {
+      animation: streifenFuellung 0.2s 0.2s forwards;
+    }
+
+    .knopf-fusion:hover .streifen-linie:nth-child(3) {
+      animation: streifenFuellung 0.2s 0.4s forwards;
+    }
+
+    .knopf-fusion:hover .streifen-linie:nth-child(4) {
+      animation: streifenFuellung 0.2s 0.6s forwards;
+    }
+
+    .knopf-fusion:hover .streifen-linie:nth-child(5) {
+      animation: streifenFuellung 0.2s 0.8s forwards;
+    }
+
+    /* Keyframe für Streifenfüllung */
+    @keyframes streifenFuellung {
+      0% { transform: scaleX(0); }
+      100% { transform: scaleX(1); }
+    }
+  </style>
+</head>
+<body>
+  <button class="knopf-fusion" onclick="location.href='9.html'">
+    <img class="bild-innerhalb" src="Casesbeauty.jpg" alt="Intuitifusion">
+    <div class="streifen-container">
+      <div class="streifen-linie"></div>
+      <div class="streifen-linie"></div>
+      <div class="streifen-linie"></div>
+      <div class="streifen-linie"></div>
+      <div class="streifen-linie"></div>
+    </div>
+  </button>
+</body>
+</html>
