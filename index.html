@@ -124,86 +124,7 @@
     }
 
 
-
-
-        /* Stil für den Spezialknopf */
-        .knopf-fusion {
-      position: relative;
-      width: 365px;
-      height: 230px;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      background: none;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    /* Bild im Spezialknopf */
-    .knopf-fusion .bild-innerhalb {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Container für überlagerte Streifen */
-    .streifen-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Einzelne horizontale Streifen */
-    .streifen-linie {
-      position: absolute;
-      width: 100%;
-      height: 20%;
-      background-color: rgba(0, 0, 0, 0.4);
-      opacity: 0;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: opacity 0.3s ease, transform 0.2s ease;
-    }
-
-    .streifen-linie:nth-child(1) { top: 0; }
-    .streifen-linie:nth-child(2) { top: 20%; }
-    .streifen-linie:nth-child(3) { top: 40%; }
-    .streifen-linie:nth-child(4) { top: 60%; }
-    .streifen-linie:nth-child(5) { top: 80%; }
-
-    /* Hover-Effekt: Linien erscheinen */
-    .knopf-fusion:hover .streifen-linie {
-      opacity: 1;
-    }
-
-    /* Staffelung der Animationen */
-    .knopf-fusion:hover .streifen-linie:nth-child(1) {
-      animation: streifenFuellung 0.2s 0s forwards;
-    }
-
-    .knopf-fusion:hover .streifen-linie:nth-child(2) {
-      animation: streifenFuellung 0.2s 0.2s forwards;
-    }
-
-    .knopf-fusion:hover .streifen-linie:nth-child(3) {
-      animation: streifenFuellung 0.2s 0.4s forwards;
-    }
-
-    .knopf-fusion:hover .streifen-linie:nth-child(4) {
-      animation: streifenFuellung 0.2s 0.6s forwards;
-    }
-
-    .knopf-fusion:hover .streifen-linie:nth-child(5) {
-      animation: streifenFuellung 0.2s 0.8s forwards;
-    }
-
-    /* Keyframe für Streifenfüllung */
-    @keyframes streifenFuellung {
-      0% { transform: scaleX(0); }
-      100% { transform: scaleX(1); }
-    }
+ 
   </style>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -219,7 +140,7 @@
     </h1>
     
     <h2 class="text-4xl text-center md:text-5xl lg:text-3xl font-semibold">
-      Online-Wirkung mit Design & Strategie
+      Entschlüssele dein inneres Wesen & seine Wirkung
     </h2>
 
   </header>
@@ -227,10 +148,10 @@
 
   <main class="flex-grow flex flex-col items-center justify-center space-y-6 px-4">
     <div class="w-full max-w-md space-y-4">
-      <button class="button button-gray" data-modal="online-presence">Online Präsenz</button>
-      <button class="button button-gray" data-modal="brand-communication">Konsistente Markenkommunikation</button>
-      <button class="button button-indigo" data-modal="security-privacy">Sicherheit & Datenschutz</button>
-      <button class="button button-blue" data-modal="customer-support">Kundenorientierter Support</button>
+      <button class="button button-gray" data-modal="online-presence">Essenz</button>
+      <button class="button button-gray" data-modal="brand-communication">Berufung</button>
+      <button class="button button-indigo" data-modal="security-privacy">Ausdruck</button>
+      <button class="button button-blue" data-modal="customer-support">Resonanz</button>
     </div>
   </main>
 
@@ -253,7 +174,7 @@
 
   <section class="container mx-auto px-4 py-12 md:py-24"> 
     <div class="max-w-3xl mx-auto text-center">
-        <h3 class="text-2xl font-semibold text-gray-800">Verwandeln Sie online Besucher in Kunden - mit digitaler Präsenz die wirkt.</h3>
+        <h3 class="text-2xl font-semibold text-gray-800">Lerne Schritt für Schritt die wertvollsten Aspekte deines Wesens kennen und nutze seine Strahlkraft</h3>
         <p class="mt-4 text-lg text-purple-300"></p>
 
     </div>
@@ -320,19 +241,27 @@
   // Modal content data
   const modalData = {
 "online-presence": {
-  title: "Deine Online-Präsenz, die verkauft.",
+  title: "Der Himmel in dir",
   content: `
-    <p class="font-semibold text-lg">1. Dein digitaler erster Eindruck</p>
-    <p class="text-sm mb-4">In Sekunden entscheiden Menschen, ob sie dir vertrauen. Eine moderne, mobile Website wirkt wie ein maßgeschneiderter Anzug – sie zeigt Qualität, Sicherheit und Professionalität.</p>
+   
+    <div class="text-sm">
+  <p><strong>Essenz</strong></p>
+  <p>Die Essenz ist dein innerster Kern.</p>
+  <p>Sie ist nicht gemacht –</p>
+  <p>sondern gewesen,</p>
+  <p>bevor du etwas wurdest.</p>
+  <br />
+  <p>Sie ist frei von Masken,</p>
+  <p>von Rollen, Zweifeln und Erwartungen.</p>
+  <br />
+  <p>Sie ist die Stille,</p>
+  <p>aus der alle Geräusche kommen –</p>
+  <p>leise, kraftvoll, unverwechselbar.</p>
+  <br />
+  <p>Sie ist der Himmel,</p>
+  <p>und die Wolken sind in ihr.</p>
+</div>
 
-    <p class="font-semibold text-lg">2. Nähe schafft Vertrauen</p>
-    <p class="text-sm mb-4">Präsenz auf Plattformen wie Instagram, LinkedIn oder TikTok macht dich menschlich. Du wirst greifbar, sympathisch – und relevant.</p>
-
-    <p class="font-semibold text-lg">3. Sichtbar bei Google</p>
-    <p class="text-sm mb-4">Die besten Inhalte bringen nichts, wenn man dich nicht findet. Mit klugen Texten, Struktur und Technik wirst du dort sichtbar, wo deine Kunden nach dir suchen: auf Google.</p>
-
-    <p class="font-semibold text-lg">4. Ein Branding, das bleibt</p>
-    <p class="text-sm">Wiedererkennbarkeit ist kein Zufall. Mit konsistentem Design, klarer Sprache und einem starken Logo wirst du zur Marke, die man nicht vergisst.</p>
   `
 },
     "brand-communication": {
@@ -371,7 +300,9 @@
     const data = modalData[modalId];
     if (data) {
       modalTitle.textContent = data.title;
+      modalTitle.style.textAlign = 'center'; // Titel zentrieren
       modalContent.innerHTML = data.content;
+      modalContent.style.textAlign = 'center'; // Inhalt zentrieren
       modal.classList.remove('hidden');
       document.addEventListener('keydown', handleEscape);
     }
