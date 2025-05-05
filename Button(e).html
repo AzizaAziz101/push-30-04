@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aziza x</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #232222;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 4rem;
+      line-height: 1.2;
+      color: #D1D5DB;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 9999px;
+      text-align: center;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      border: none;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    .button-gray {
+      background-color: #4B5563;
+      color: white;
+    }
+
+    .button-indigo {
+      background-color: #6366F1;
+      color: white;
+    }
+
+    .button-blue {
+      background-color: #3B82F6;
+      color: white;
+    }
+
+    .button:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+  <main class="min-h-screen flex flex-col items-center justify-center space-y-6 px-4">
+    <h1>Aziza x</h1>
+    <div class="w-full max-w-md space-y-4">
+      <button class="button button-gray" data-modal="online-presence">Essenz</button>
+      <button class="button button-gray" data-modal="brand-communication">Berufung</button>
+      <button class="button button-indigo" data-modal="security-privacy">Ausdruck</button>
+      <button class="button button-blue" data-modal="customer-support">Resonanz</button>
+    </div>
+  </main>
+</body>
+</html>
